@@ -53,6 +53,17 @@ function reset() {
     <th>Team</th>
     <th>Height</th>
     <th>Weight</th>
+    <th>Career Games Played</th>
+    <th>Average Minutes Played</th>
+    <th>Career PPG</th>
+    <th>Career FG Percent</th>
+    <th>Career 3 Percent</th>
+    <th>Career FT Percent</th>
+    <th>Career Offensive Rebounds</th>
+    <th>Career Defensive Rebounds</th>
+    <th>Career Assists</th>
+    <th>Career Steals</th>
+    <th>Career Blocks</th>
   </tr>
   </thead>
   <tbody id="result">
