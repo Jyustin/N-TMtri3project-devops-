@@ -26,7 +26,7 @@ fetch("", requestOptions)
   r.forEach(ev => {
     const row = document.createElement("tr")
     const data = document.createElement("td")
-    data.innerHTML = `${ev.}, ${ev.}: ${ev.}`
+    data.innerHTML = `${ev.name}, ${ev.team}, ${ev.height}, ${ev.weight}, ${ev.gamesplayed}, ${ev.avgminutes}, ${ev.ppg}, ${ev.fgpercent}, ${ev.threepercent}, ${ev.ftpercent}, ${ev.orebounds}, ${ev.drebounds}, ${ev.assists}, ${ev.steals}, ${ev.blocks}`
     row.appendChild(data)
     document.getElementById("table").appendChild(row)
   })
@@ -49,8 +49,10 @@ function reset() {
 <table>
   <thead>
   <tr>
-    <th>User ID</th>
-    <th>New Fact for this Week</th>
+    <th>Player Name</th>
+    <th>Team</th>
+    <th>Height</th>
+    <th>Weight</th>
   </tr>
   </thead>
   <tbody id="result">
