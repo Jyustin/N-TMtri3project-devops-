@@ -74,7 +74,7 @@ function reset() {
 
 <script>
 
-function read_users() {
+function read_players() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -120,55 +120,13 @@ function read_users() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://fnvs.duckdns.org/api/fact"
+const url = ""
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
-read_users();
+read_players();
 
 </script>
-
-
-<form action="javascript:create_user()">
- <p><label>
-        Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="fact" id="fact" placeholder="fact" required>
-        <input type="text" name="fact" id="date" placeholder="day/month" required>
-        <input type="number" name="fact" id="year" placeholder="year" required>
-
-
-    </label></p>
-    <p><button>Add</button></p>
-</form>
-
-
-<script>
-  function create_user() {
-    fetch("https://fnvs.duckdns.org/api/fact/create", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({fact:document.getElementById("fact").value,date:document.getElementById("date").value,year:document.getElementById("year").valueAsNumber})
-    }).then(e => console.log(
-     
-      "yay"
-    ));
-  }
-</script>
-
-<form action="javascript:create_user()">
- <p><label>
-        Tell Us Something that Happened on Your Favorite Day!
-        <input type="text" name="fact" id="fact" placeholder="fact" required>
-        <input type="text" name="fact" id="date" placeholder="day/month" required>
-        <input type="number" name="fact" id="year" placeholder="year" required>
-
-
-    </label></p>
-    <p><button>Add</button></p>
-</form>
 
 </body>
-
 
 </html>
