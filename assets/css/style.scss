@@ -3,14 +3,43 @@
 
 @import "{{ site.theme }}";
 
+
+/* Global Styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333333;
+}
+
+/* Container for the sports statistics */
+.statistics-container {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
 /* "row style" is flexible size and aligns pictures in center */
 .row {
-    align-items: center;
-    display: flex;
-  }
-  
-  /* "column style" is one-third of the width with padding */
-  .column {
-    flex: 33.33%;
-    padding: 5px;
-  }
+  align-items: center;
+  display: flex;
+}
+
+/* "column style" is one-third of the width with padding */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+/* Add a border and box shadow to the column */
+.column {
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a hover effect to the column */
+.column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
