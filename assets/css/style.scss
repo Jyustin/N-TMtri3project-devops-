@@ -5,6 +5,8 @@
 
 
 
+@import "{{ site.theme }}";
+
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
@@ -86,4 +88,23 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/* Add animation to the image within the column */
+.column img {
+  animation: rotateImage 2s linear infinite;
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the image to a specific column */
+.column.lebron-column img {
+  content: url('path/to/lebronpic.jpg');
 }
