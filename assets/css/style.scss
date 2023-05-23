@@ -3,14 +3,87 @@
 
 @import "{{ site.theme }}";
 
+
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Container for the sports statistics */
+.statistics-container {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
 /* "row style" is flexible size and aligns pictures in center */
 .row {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
+}
+
+/* "column style" is one-third of the width with padding */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+/* Add a border and box shadow to the column */
+.column {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a hover effect to the column */
+.column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a transition for smooth animation */
+.column {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add styling to the images within the columns */
+.column img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add animation to the images */
+.column img {
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* "column style" is one-third of the width with padding */
-  .column {
-    flex: 33.33%;
-    padding: 5px;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* Add a subtle box shadow to the statistics container */
+.statistics-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a fade-in animation to the statistics container */
+.statistics-container {
+  opacity: 0;
+  animation: fadeIn 1s ease both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
