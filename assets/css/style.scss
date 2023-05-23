@@ -4,13 +4,11 @@
 @import "{{ site.theme }}";
 
 
-
-@import "{{ site.theme }}";
-
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333333;
 }
 
 /* Container for the sports statistics */
@@ -33,7 +31,7 @@ body {
 
 /* Add a border and box shadow to the column */
 .column {
-  border: 1px solid #ccc;
+  border: 1px solid #e5e5e5;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,6 +53,20 @@ body {
 }
 
 /* Add animation to the images */
+.column.lebron-column img {
+  animation: rotateImage 2s linear infinite;
+}
+
+@keyframes rotateImage {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to the images */
 .column img {
   animation: fadeInUp 0.5s ease both;
 }
@@ -68,43 +80,4 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Add a subtle box shadow to the statistics container */
-.statistics-container {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Add a fade-in animation to the statistics container */
-.statistics-container {
-  opacity: 0;
-  animation: fadeIn 1s ease both;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Add animation to the image within the column */
-.column img {
-  animation: rotateImage 2s linear infinite;
-}
-
-@keyframes rotateImage {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Apply the image to a specific column */
-.column.lebron-column img {
-  content: url('path/to/lebronpic.jpg');
 }
