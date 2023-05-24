@@ -1,9 +1,7 @@
----
----
-
 /* Define primary colors */
 $primary-color: #007bff;
 $secondary-color: #6c757d;
+$background-color: #f2f2f2;
 
 /* Define font family */
 $font-family: Arial, sans-serif;
@@ -69,4 +67,41 @@ table a {
   animation: slide-in 0.5s ease;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
+}
+
+/* Additional Styles */
+
+body {
+  background-color: $background-color;
+  font-family: $font-family;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  color: $primary-color;
+  font-size: 24px;
+}
+
+.description {
+  font-size: 16px;
+  color: $secondary-color;
+}
+
+.gitorg-link {
+  display: block;
+  margin-top: 20px;
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.gitorg-link:hover {
+  color: darken($primary-color, 10%);
 }
