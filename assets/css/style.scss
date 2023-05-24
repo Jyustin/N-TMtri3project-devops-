@@ -1,45 +1,69 @@
----
----
+/* Define primary colors */
+$primary-color: #007bff;
+$secondary-color: #6c757d;
 
-@import "{{ site.theme }}";
+/* Define font family */
+$font-family: Arial, sans-serif;
 
-
-/* Global Styles */
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f8f8f8;
-  color: #333333;
+/* Apply basic styles to the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-/* Container for the sports statistics */
-.statistics-container {
-  margin: 20px auto;
-  max-width: 1200px;
+table td {
+  padding: 10px;
+  border: 1px solid $secondary-color;
 }
 
-/* "row style" is flexible size and aligns pictures in center */
-.row {
-  align-items: center;
-  display: flex;
+/* Style the navigation links */
+table a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
 }
 
-/* "column style" is one-third of the width with padding */
-.column {
-  flex: 33.33%;
-  padding: 5px;
+/* Add styling to the column with LeBron James' image */
+.lebron-column {
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
 }
 
-/* Add a border and box shadow to the column */
-.column {
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Define animation keyframes */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-/* Add a hover effect to the column */
-.column:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Apply animation to the navigation links */
+table a {
+  animation: slide-in 0.5s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
 }
 
-
-
+/* Apply animation to LeBron James' image */
+.lebron-column img {
+  animation: slide-in 0.5s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
