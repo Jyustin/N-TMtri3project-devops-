@@ -3,15 +3,6 @@
 <html>
 <body>
 
-<table style="width:100%" id="table">
-  <tr>
-    <th>Real Time NBA Player Statistics</th>
-  </tr>
-</table>
-
-
-
-
 <script>
 
 var requestOptions = {
