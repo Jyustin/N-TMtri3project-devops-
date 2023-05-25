@@ -38,7 +38,7 @@
         <option value="team 3">3</option> 
         <option value="team 4">4</option> 
     </select></td>
-    <td rowspan="2"><select name="teams2" id="selection 2"> 
+    <td rowspan="2" id="selection 2"><select name="teams2"> 
         <option value="team 1">1</option> 
         <option value="team 2">2</option> 
         <option value="team 3 ">3</option> 
@@ -66,7 +66,9 @@
 function tester() {
     alert("hi");
     test1 = "cool"
-    document.getElementById("four").innerHTML = (test1);
+    var selection2 = document.getElementById("selection2").getElementsByTagName("select")[0].value;
+
+    document.getElementById("selection 2").innerHTML = selection2;
     alert(test1);
 
 }
