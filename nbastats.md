@@ -20,7 +20,7 @@ var requestOptions = {
 };
 
 
-fetch("", requestOptions)
+fetch("http://172.21.244.147:8086/api/nbastats/", requestOptions)
   .then(response => response.json())
   .then(r => {
   r.forEach(ev => {
@@ -120,7 +120,7 @@ function read_players() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = ""
+const url = "http://172.21.244.147:8086/api/nbastats/"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_players();
