@@ -36,61 +36,59 @@ function reset() {
 
 </script>
 
-
-<table id="musicTable">
+  <table id="musicTable">
     <thead>
       <tr>
-        <th onclick="sortTable('name')">Player</th>
-        <th onclick="sortTable('team')">Team</th>
-        <th onclick="sortTable('height')">Height (inches)</th>
-        <th onclick="sortTable('weight')">Weight (pounds)</th>
-        <th onclick="sortTable('gamesplayed')">Games Played</th>
-        <th onclick="sortTable('avgminutes')">Minutes Per Game</th>
-        <th onclick="sortTable('ppg')">Points Per Game</th>
-        <th onclick="sortTable('fgpercent')">FG Percent</th>
-        <th onclick="sortTable('orebounds')">Offensive Rebounds Per Game</th>
-        <th onclick="sortTable('drebounds')">Defensive Rebounds Per Game</th>
-        <th onclick="sortTable('assists')">Assists Per Game</th>
-        <th onclick="sortTable('steals')">Steals Per Game</th>
-        <th onclick="sortTable('blocks')">Blocks Per Game</th>
-
+        <th onclick="sortTable('title')">Title</th>
+        <th onclick="sortTable('artist')">Artist</th>
+        <th onclick="sortTable('duration')">Duration (seconds)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>LeBron James</td>
-        <td>Los Angeles Lakers</td>
-        <td>81</td>
-        <td>225</td>
-        <td>1421</td>
-        <td>32</td>
-        <td>28</td>
-        <td>52</td>
-        <td>4</td>
-        <td>4</td>
-        <td>7</td>
-        <td>1</td>
-        <td>1</td>
+        <td>Rockstar</td>
+        <td>Post Malone</td>
+        <td>218</td>
       </tr>
       <tr>
-        <td>Stephen Curry</td>
-        <td>Golden State Warriors</td>
-        <td>75</td>
-        <td>188</td>
-        <td>1259</td>
-        <td>34</td>
-        <td>21</td>
-        <td>58</td>
-        <td>3</td>
-        <td>2</td>
-        <td>6</td>
-        <td>1</td>
-        <td>1</td>
+        <td>God's Plan</td>
+        <td>Drake</td>
+        <td>198</td>
+      </tr>
+      <tr>
+        <td>Stronger</td>
+        <td>Kanye West</td>
+        <td>311</td>
+      </tr>
+      <tr>
+        <td>Mask Off</td>
+        <td>Future</td>
+        <td>227</td>
+      </tr>
+      <tr>
+        <td>Circles</td>
+        <td>Post Malone</td>
+        <td>215</td>
+      </tr>
+      <tr>
+        <td>One Dance</td>
+        <td>Drake</td>
+        <td>173</td>
+      </tr>
+      <tr>
+        <td>Heartless</td>
+        <td>Kanye West</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>Low Life</td>
+        <td>Future</td>
+        <td>315</td>
       </tr>
     </tbody>
   </table>
-
-<script>
+  
+  <script>
     // Function to sort the table based on the selected column
     function sortTable(columnName) {
       const table = document.getElementById('musicTable');
@@ -98,20 +96,9 @@ function reset() {
       const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
       const isAscending = !headerRow.classList.contains('asc');
       
-      rows.sort((rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowH, rowI, rowJ, rowK, rowL, rowM) => {
+      rows.sort((rowA, rowB) => {
         const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellC = rowC.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellD = rowD.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellE = rowE.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellF = rowF.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellG = rowG.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellH = rowH.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellI = rowI.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellJ = rowJ.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellK = rowK.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellL = rowL.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-        const cellM = rowM.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         
         return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
       });
