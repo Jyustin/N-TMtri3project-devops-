@@ -103,12 +103,24 @@ function reset() {
       if (columnName === 'height') {
         return isAscending ? parseInt(cellA, 10) - parseInt(cellB, 10) : parseInt(cellB, 10) - parseInt(cellA, 10);
       } else {
-        return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        return isAscending ? compareStrings(cellA, cellB) : compareStrings(cellB, cellA);
       }
     });
 
     rows.forEach(row => table.tBodies[0].appendChild(row));
     headerRow.classList.toggle('asc');
+  }
+
+  // Helper function to compare strings while handling numeric values
+  function compareStrings(a, b) {
+    const numA = parseInt(a);
+    const numB = parseInt(b);
+
+    if (!isNaN(numA) && !isNaN(numB)) {
+      return numA - numB;
+    }
+
+    return a.localeCompare(b);
   }
 
   // Helper function to get the index of the selected column
@@ -117,9 +129,11 @@ function reset() {
     const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
     const headers = Array.from(headerRow.getElementsByTagName('th'));
 
-    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase());
+    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
   }
 </script>
+ 
+
 
 
 
