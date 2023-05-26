@@ -117,9 +117,10 @@ function reset() {
     const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
     const headers = Array.from(headerRow.getElementsByTagName('th'));
 
-    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
+    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase());
   }
 </script>
+
 
 
 
