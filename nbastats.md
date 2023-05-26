@@ -39,9 +39,23 @@ function reset() {
   <table id="musicTable">
     <thead>
       <tr>
-        <th onclick="sortTable('title')">Title</th>
-        <th onclick="sortTable('artist')">Artist</th>
-        <th onclick="sortTable('duration (seconds)')">Duration (seconds)</th>
+        <th onclick="sortTable('player')">Player</th>
+        <th onclick="sortTable('team')">Team</th>
+        <th onclick="sortTable('height (inches)')">Height (inches)</th>
+        <th onclick="sortTable('weight (pounds)')">Weight (pounds)</th>
+        <th onclick="sortTable('games played')">Games Played</th>
+        <th onclick="sortTable('minutes per game')">Minutes Per Game</th>
+        <th onclick="sortTable('points per game')">Points Per Game</th>
+        <th onclick="sortTable('fg percent')">FG Percent</th>
+        <th onclick="sortTable('three percent')">Three Percent</th>
+        <th onclick="sortTable('ft percent')">FT Percent</th>
+        <th onclick="sortTable('offensive rebounds')">Offensive Rebounds</th>
+        <th onclick="sortTable('defensive rebounds')">Defensive Rebounds</th>
+        <th onclick="sortTable('assists per game')">Assists Per Game</th>
+        <th onclick="sortTable('steals per game')">Steals Per Game</th>
+        <th onclick="sortTable('blocks per game')">Blocks Per Game</th>
+
+
       </tr>
     </thead>
     <tbody>
