@@ -60,44 +60,38 @@ function reset() {
     </thead>
     <tbody>
       <tr>
-        <td>Rockstar</td>
-        <td>Post Malone</td>
-        <td>218</td>
+        <td>LeBron James</td>
+        <td>Los Angeles Lakers</td>
+        <td>81</td>
+        <td>225</td>
+        <td>1421</td>
+        <td>32</td>
+        <td>28</td>
+        <td>52</td>
+        <td>27</td>
+        <td>85</td>
+        <td>7</td>
+        <td>6</td>
+        <td>7</td>
+        <td>1</td>
+        <td>1</td>
       </tr>
       <tr>
-        <td>God's Plan</td>
-        <td>Drake</td>
-        <td>198</td>
-      </tr>
-      <tr>
-        <td>Stronger</td>
-        <td>Kanye West</td>
-        <td>311</td>
-      </tr>
-      <tr>
-        <td>Mask Off</td>
-        <td>Future</td>
-        <td>227</td>
-      </tr>
-      <tr>
-        <td>Circles</td>
-        <td>Post Malone</td>
-        <td>215</td>
-      </tr>
-      <tr>
-        <td>One Dance</td>
-        <td>Drake</td>
-        <td>173</td>
-      </tr>
-      <tr>
-        <td>Heartless</td>
-        <td>Kanye West</td>
-        <td>228</td>
-      </tr>
-      <tr>
-        <td>Low Life</td>
-        <td>Future</td>
-        <td>315</td>
+        <td>Steph Curry</td>
+        <td>Golden State Warriors</td>
+        <td>75</td>
+        <td>201</td>
+        <td>1234</td>
+        <td>22</td>
+        <td>18</td>
+        <td>42</td>
+        <td>37</td>
+        <td>87</td>
+        <td>6</td>
+        <td>4</td>
+        <td>9</td>
+        <td>1</td>
+        <td>0</td>
       </tr>
     </tbody>
   </table>
