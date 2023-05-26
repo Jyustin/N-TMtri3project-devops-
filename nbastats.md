@@ -40,51 +40,52 @@ function reset() {
 <table id="musicTable">
     <thead>
       <tr>
-        <th onclick="sortTable('title')">Title</th>
-        <th onclick="sortTable('artist')">Artist</th>
-        <th onclick="sortTable('duration')">Duration (seconds)</th>
+        <th onclick="sortTable('name')">Player</th>
+        <th onclick="sortTable('team')">Team</th>
+        <th onclick="sortTable('height')">Height (inches)</th>
+        <th onclick="sortTable('weight')">Weight (pounds)</th>
+        <th onclick="sortTable('gamesplayed')">Games Played</th>
+        <th onclick="sortTable('avgminutes')">Minutes Per Game</th>
+        <th onclick="sortTable('ppg')">Points Per Game</th>
+        <th onclick="sortTable('fgpercent')">FG Percent</th>
+        <th onclick="sortTable('orebounds')">Offensive Rebounds Per Game</th>
+        <th onclick="sortTable('drebounds')">Defensive Rebounds Per Game</th>
+        <th onclick="sortTable('assists')">Assists Per Game</th>
+        <th onclick="sortTable('steals')">Steals Per Game</th>
+        <th onclick="sortTable('blocks')">Blocks Per Game</th>
+
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Rockstar</td>
-        <td>Post Malone</td>
-        <td>218</td>
+        <td>LeBron James</td>
+        <td>Los Angeles Lakers</td>
+        <td>81</td>
+        <td>225</td>
+        <td>1421</td>
+        <td>32</td>
+        <td>28</td>
+        <td>52</td>
+        <td>4</td>
+        <td>4</td>
+        <td>7</td>
+        <td>1</td>
+        <td>1</td>
       </tr>
       <tr>
-        <td>God's Plan</td>
-        <td>Drake</td>
-        <td>198</td>
-      </tr>
-      <tr>
-        <td>Stronger</td>
-        <td>Kanye West</td>
-        <td>311</td>
-      </tr>
-      <tr>
-        <td>Mask Off</td>
-        <td>Future</td>
-        <td>227</td>
-      </tr>
-      <tr>
-        <td>Circles</td>
-        <td>Post Malone</td>
-        <td>215</td>
-      </tr>
-      <tr>
-        <td>One Dance</td>
-        <td>Drake</td>
-        <td>173</td>
-      </tr>
-      <tr>
-        <td>Heartless</td>
-        <td>Kanye West</td>
-        <td>228</td>
-      </tr>
-      <tr>
-        <td>Low Life</td>
-        <td>Future</td>
-        <td>315</td>
+        <td>Stephen Curry</td>
+        <td>Golden State Warriors</td>
+        <td>75</td>
+        <td>188</td>
+        <td>1259</td>
+        <td>34</td>
+        <td>21</td>
+        <td>58</td>
+        <td>3</td>
+        <td>2</td>
+        <td>6</td>
+        <td>1</td>
+        <td>1</td>
       </tr>
     </tbody>
   </table>
