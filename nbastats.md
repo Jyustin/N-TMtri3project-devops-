@@ -37,92 +37,85 @@ function reset() {
 </script>
 
   <table id="musicTable">
-  <thead>
-    <tr>
-      <th onclick="sortTable('player')">Player</th>
-      <th onclick="sortTable('team')">Team</th>
-      <th onclick="sortTable('height')">Height (inches)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Rockstar</td>
-      <td>Post Malone</td>
-      <td>218</td>
-    </tr>
-    <tr>
-      <td>God's Plan</td>
-      <td>Drake</td>
-      <td>198</td>
-    </tr>
-    <tr>
-      <td>Stronger</td>
-      <td>Kanye West</td>
-      <td>311</td>
-    </tr>
-    <tr>
-      <td>Mask Off</td>
-      <td>Future</td>
-      <td>227</td>
-    </tr>
-    <tr>
-      <td>Circles</td>
-      <td>Post Malone</td>
-      <td>215</td>
-    </tr>
-    <tr>
-      <td>One Dance</td>
-      <td>Drake</td>
-      <td>173</td>
-    </tr>
-    <tr>
-      <td>Heartless</td>
-      <td>Kanye West</td>
-      <td>228</td>
-    </tr>
-    <tr>
-      <td>Low Life</td>
-      <td>Future</td>
-      <td>315</td>
-    </tr>
-  </tbody>
-</table>
-
-<script>
-  // Function to sort the table based on the selected column
-  function sortTable(columnName) {
-    const table = document.getElementById('musicTable');
-    const rows = Array.from(table.tBodies[0].getElementsByTagName('tr'));
-    const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
-    const isAscending = !headerRow.classList.contains('asc');
-
-    rows.sort((rowA, rowB) => {
-      const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-      const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-
-      if (columnName === 'height') {
-        const numA = parseInt(cellA, 10);
-        const numB = parseInt(cellB, 10);
-
-        return isAscending ? numA - numB : numB - numA;
-      } else {
+    <thead>
+      <tr>
+        <th onclick="sortTable('title')">Title</th>
+        <th onclick="sortTable('artist')">Artist</th>
+        <th onclick="sortTable('duration')">Duration (seconds)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rockstar</td>
+        <td>Post Malone</td>
+        <td>218</td>
+      </tr>
+      <tr>
+        <td>God's Plan</td>
+        <td>Drake</td>
+        <td>198</td>
+      </tr>
+      <tr>
+        <td>Stronger</td>
+        <td>Kanye West</td>
+        <td>311</td>
+      </tr>
+      <tr>
+        <td>Mask Off</td>
+        <td>Future</td>
+        <td>227</td>
+      </tr>
+      <tr>
+        <td>Circles</td>
+        <td>Post Malone</td>
+        <td>215</td>
+      </tr>
+      <tr>
+        <td>One Dance</td>
+        <td>Drake</td>
+        <td>173</td>
+      </tr>
+      <tr>
+        <td>Heartless</td>
+        <td>Kanye West</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>Low Life</td>
+        <td>Future</td>
+        <td>315</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <script>
+    // Function to sort the table based on the selected column
+    function sortTable(columnName) {
+      const table = document.getElementById('musicTable');
+      const rows = Array.from(table.tBodies[0].getElementsByTagName('tr'));
+      const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
+      const isAscending = !headerRow.classList.contains('asc');
+      
+      rows.sort((rowA, rowB) => {
+        const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        
         return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-      }
-    });
-
-    rows.forEach(row => table.tBodies[0].appendChild(row));
-    headerRow.classList.toggle('asc');
-  }
-
-  // Helper function to get the index of the selected column
-  function getColumnIndex(columnName) {
-    const table = document.getElementById('musicTable');
-    const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
-    const headers = Array.from(headerRow.getElementsByTagName('th'));
-
-    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase());
-  }
-</script>
+      });
+      
+      rows.forEach(row => table.tBodies[0].appendChild(row));
+      headerRow.classList.toggle('asc');
+    }
+  
+    // Helper function to get the index of the selected column
+    function getColumnIndex(columnName) {
+      const table = document.getElementById('musicTable');
+      const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
+      const headers = Array.from(headerRow.getElementsByTagName('th'));
+      
+      return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
+    }
+  </script>
 
 
 
