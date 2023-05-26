@@ -39,9 +39,9 @@ function reset() {
   <table id="musicTable">
     <thead>
       <tr>
-        <th onclick="sortTable('title')">Title</th>
-        <th onclick="sortTable('artist')">Artist</th>
-        <th onclick="sortTable('duration')">Duration (seconds)</th>
+        <th onclick="sortTable('player')">Player</th>
+        <th onclick="sortTable('team')">Team</th>
+        <th onclick="sortTable('height')">Height (inches)</th>
       </tr>
     </thead>
     <tbody>
@@ -96,9 +96,10 @@ function reset() {
       const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
       const isAscending = !headerRow.classList.contains('asc');
       
-      rows.sort((rowA, rowB) => {
+      rows.sort((rowA, rowB, rowC) => {
         const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellC = rowC.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         
         return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
       });
