@@ -58,42 +58,6 @@ function reset() {
 
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>LeBron James</td>
-        <td>Los Angeles Lakers</td>
-        <td>81</td>
-        <td>225</td>
-        <td>1421</td>
-        <td>32</td>
-        <td>28</td>
-        <td>52</td>
-        <td>27</td>
-        <td>85</td>
-        <td>7</td>
-        <td>6</td>
-        <td>7</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>Steph Curry</td>
-        <td>Golden State Warriors</td>
-        <td>75</td>
-        <td>201</td>
-        <td>1234</td>
-        <td>22</td>
-        <td>18</td>
-        <td>42</td>
-        <td>37</td>
-        <td>87</td>
-        <td>6</td>
-        <td>4</td>
-        <td>9</td>
-        <td>1</td>
-        <td>0</td>
-      </tr>
-    </tbody>
   </table>
   
   <script>
