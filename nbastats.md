@@ -100,7 +100,7 @@ function reset() {
       const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
       const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
 
-      if (columnName === 'height') {
+      if (columnName === 'height (inches)') {
         const numA = parseInt(cellA, 10);
         const numB = parseInt(cellB, 10);
 
