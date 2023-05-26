@@ -41,7 +41,7 @@ function reset() {
       <tr>
         <th onclick="sortTable('title')">Title</th>
         <th onclick="sortTable('artist')">Artist</th>
-        <th onclick="sortTable('duration')">Duration (seconds)</th>
+        <th onclick="sortTable('duration (seconds)')">Duration (seconds)</th>
       </tr>
     </thead>
     <tbody>
