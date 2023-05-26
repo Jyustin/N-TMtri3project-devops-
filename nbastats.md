@@ -98,9 +98,20 @@ function reset() {
       const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
       const isAscending = !headerRow.classList.contains('asc');
       
-      rows.sort((rowA, rowB) => {
+      rows.sort((rowA, rowB, rowC, rowD, rowE, rowF, rowG, rowH, rowI, rowJ, rowK, rowL, rowM) => {
         const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellC = rowC.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellD = rowD.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellE = rowE.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellF = rowF.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellG = rowG.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellH = rowH.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellI = rowI.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellJ = rowJ.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellK = rowK.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellL = rowL.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+        const cellM = rowM.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
         
         return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
       });
