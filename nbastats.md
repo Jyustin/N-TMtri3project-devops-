@@ -41,7 +41,7 @@ function reset() {
     <tr>
       <th onclick="sortTable('player')">Player</th>
       <th onclick="sortTable('team')">Team</th>
-      <th onclick="sortTable('height (inches)')">Height (inches)</th>
+      <th onclick="sortTable('height')">Height (inches)</th>
     </tr>
   </thead>
   <tbody>
@@ -100,13 +100,11 @@ function reset() {
       const cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
       const cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
 
-      if (columnName === 'height (inches)') {
+      if (columnName === 'height') {
         const numA = parseInt(cellA, 10);
         const numB = parseInt(cellB, 10);
 
-        if (numA < numB) return isAscending ? -1 : 1;
-        if (numA > numB) return isAscending ? 1 : -1;
-        return 0;
+        return isAscending ? numA - numB : numB - numA;
       } else {
         return isAscending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
       }
@@ -122,9 +120,10 @@ function reset() {
     const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
     const headers = Array.from(headerRow.getElementsByTagName('th'));
 
-    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
+    return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase());
   }
 </script>
+
 
  
 
