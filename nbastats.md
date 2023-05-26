@@ -117,7 +117,7 @@ function reset() {
       return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
     }
   </script>
-  
+
 <script>
 
 function read_players() {
@@ -174,9 +174,4 @@ read_players();
 </script>
 
 </body>
-</html>
-
-
-</body>
-
 </html>
