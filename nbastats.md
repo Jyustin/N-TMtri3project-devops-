@@ -89,15 +89,14 @@
     }
   </script>
 
-
-
- 
-
-
-
-
-
 <script>
+
+const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+const url = "http://172.21.244.147:8086/api/nbastats"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+read_players();
 
 function read_players() {
     // prepare fetch options
@@ -142,13 +141,6 @@ function read_players() {
       resultContainer.appendChild(tr);
     });
   }
-
-const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://172.21.244.147:8086/api/nbastats"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
-read_players();
 
 </script>
 
