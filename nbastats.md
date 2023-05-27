@@ -4,56 +4,56 @@
 <body>
 
 <script>
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
 
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow'
-};
+  fetch("http://172.21.244.147:8086/api/nbastats", requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      const table = document.getElementById("musicTable");
+      const tbody = document.createElement("tbody");
 
+      data.forEach(player => {
+        const row = document.createElement("tr");
 
-fetch("http://172.21.244.147:8086/api/nbastats/", requestOptions)
-  .then(response => response.json())
-  .then(r => {
-  r.forEach(ev => {
-    const row = document.createElement("tr")
-    const data = document.createElement("td")
-    data.innerHTML = `${ev.name}, ${ev.team}, ${ev.height}, ${ev.weight}, ${ev.gamesplayed}, ${ev.avgminutes}, ${ev.ppg}, ${ev.fgpercent}, ${ev.threepercent}, ${ev.ftpercent}, ${ev.orebounds}, ${ev.drebounds}, ${ev.assists}, ${ev.steals}, ${ev.blocks}`
-    row.appendChild(data)
-    document.getElementById("table").appendChild(row)
-  })
-  })
-  .catch(error => console.log('error', error))
+        // Iterate over each property and create a table cell (td) for it
+        for (const key in player) {
+          const cell = document.createElement("td");
+          cell.innerText = player[key];
+          row.appendChild(cell);
+        }
 
+        tbody.appendChild(row);
+      });
 
+      table.appendChild(tbody);
+    })
+    .catch(error => console.log('error', error));
 
-
-function reset() {
-  window.location.reload();
-}
-
-
-
-
+  // Rest of the code...
 </script>
+
 
   <table id="musicTable">
     <thead>
       <tr>
-        <th onclick="sortTable('player')">Player</th>
-        <th onclick="sortTable('team')">Team</th>
-        <th onclick="sortTable('height (inches)')">Height (inches)</th>
-        <th onclick="sortTable('weight (pounds)')">Weight (pounds)</th>
-        <th onclick="sortTable('games played')">Games Played</th>
-        <th onclick="sortTable('minutes per game')">Minutes Per Game</th>
-        <th onclick="sortTable('points per game')">Points Per Game</th>
-        <th onclick="sortTable('fg percent')">FG Percent</th>
-        <th onclick="sortTable('three percent')">Three Percent</th>
-        <th onclick="sortTable('ft percent')">FT Percent</th>
-        <th onclick="sortTable('offensive rebounds')">Offensive Rebounds</th>
-        <th onclick="sortTable('defensive rebounds')">Defensive Rebounds</th>
-        <th onclick="sortTable('assists per game')">Assists Per Game</th>
-        <th onclick="sortTable('steals per game')">Steals Per Game</th>
-        <th onclick="sortTable('blocks per game')">Blocks Per Game</th>
+        <th onclick="sortTable('player')">Assists</th>
+        <th onclick="sortTable('team')">Minutes Per Game</th>
+        <th onclick="sortTable('height (inches)')">Blocks Per Game</th>
+        <th onclick="sortTable('weight (pounds)')">Defensive Rebounds</th>
+        <th onclick="sortTable('games played')">FG Percent</th>
+        <th onclick="sortTable('minutes per game')">FT Percent</th>
+        <th onclick="sortTable('points per game')">Games Played</th>
+        <th onclick="sortTable('fg percent')">Height (inches)</th>
+        <th onclick="sortTable('three percent')">Name</th>
+        <th onclick="sortTable('ft percent')">Offensive Rebounds</th>
+        <th onclick="sortTable('offensive rebounds')">Points Per Game</th>
+        <th onclick="sortTable('defensive rebounds')">Steals Per Game</th>
+        <th onclick="sortTable('assists per game')">Team</th>
+        <th onclick="sortTable('steals per game')">Three Percent</th>
+        <th onclick="sortTable('blocks per game')">Weight (pounds)</th>
 
 
       </tr>
@@ -145,7 +145,7 @@ function read_players() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://172.21.244.147:8086/api/nbastats/"
+const url = "http://172.21.244.147:8086/api/nbastats"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_players();
