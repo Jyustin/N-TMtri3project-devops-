@@ -9,7 +9,7 @@
     redirect: 'follow'
   };
 
-  fetch("http://172.21.244.147:8086/api/nbastats", requestOptions)
+  fetch("https://tri3dev.duckdns.org/api/nbastats", requestOptions)
     .then(response => response.json())
     .then(data => {
       const table = document.getElementById("musicTable");
@@ -105,7 +105,7 @@ function sortTable(columnName) {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://172.21.244.147:8086/api/nbastats"
+const url = "https://tri3dev.duckdns.org/api/nbastats"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_players();
