@@ -25,41 +25,59 @@
     text-align:center;
 }
 </style>
+<p id="mario" class="sprite"></p>
+
 <tr>
     <th>game 1<br>date</th>
     <th>game 2<br>date</th>
     <th>game 3<br>date</th>
-</tr>
 <tr>
     <td>
     <select name="teams1" id="selection 1"> 
-        <option value="team 1">1</option> 
-        <option value="team 2">2</option> 
-        <option value="team 3">3</option> 
-        <option value="team 4">4</option> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
     </select></td>
     <td rowspan="2" id="selection 2"><select name="teams2"> 
-        <option value="team 1">1</option> 
-        <option value="team 2">2</option> 
-        <option value="team 3 ">3</option> 
-        <option value="team 4">4</option> </td>
-    <td rowspan="4"><p>team1</p></td>
-</tr>
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3 ">team 3</option> 
+        <option value="team 4">team 4</option> </td>
+    <td rowspan="4"><select name="teams1" id="selection 1"> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
+    </select></td>
 <tr>
-    <td><p>team 2</p></td>
-</tr>
+    <td><select name="teams1" id="selection 1"> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
+    </select></td>
 <tr>
-    <td><p>team 3</p></td>
-    <td rowspan="2"><p>team4</p></td>
-</tr>
+    <td><select name="teams1" id="selection 1"> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
+    </select></td>
+    <td rowspan="2"><select name="teams1" id="selection 1"> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
+    </select></td>
 <tr>
-    <td><p>team 4</p></td>
-</tr>
+    <td><select name="teams1" id="selection 1"> 
+        <option value="team 1">team 1</option> 
+        <option value="team 2">team 2</option> 
+        <option value="team 3">team 3</option> 
+        <option value="team 4">team 4</option> 
+    </select></td>
 
-
-</table>
-
-<button onclick="tester()">test</button>
 
 
 <script>
@@ -80,7 +98,6 @@ function tester() {
 {% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!--- HTML for page contains <p> tag named "mario" and class properties for a "sprite"  -->
-<p id="mario" class="sprite"></p>
   
 
 <!--- Embedded Cascading Style Sheet (CSS) rules, defines how HTML elements look --->
@@ -248,4 +265,3 @@ function tester() {
 
 </script>
 
-</html>
