@@ -13,7 +13,7 @@
   fetch("https://tri3dev.duckdns.org/api/nbastats", requestOptions)
     .then(response => response.json())
     .then(data => {
-      const table = document.getElementById("musicTable");
+      const table = document.getElementById("sportsTable");
       const tbody = document.createElement("tbody");
 
       data.forEach(player => {
@@ -58,7 +58,7 @@
             <th onclick="sortTable('weight (pounds)')">Weight (pounds)</th>
         </tr>
     </thead>
-</table>
+  </table>
 
 <script>
     // Function to sort the table based on the selected column
