@@ -1,7 +1,7 @@
-
+<html>
 <!--- 2nd sprite file --->
 {% assign sprite_file2 = site.baseurl | append: "/" | append: "luigi_animation.png" %}  <!--- Liquid concatentation --->
-{% assign hash2 = site.data.new_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
+{% assign hash = site.data.new_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels2 = 32 %} <!--- Liquid integer assignment --->
 
 <p id="luigi" class="sprite2"></p>
@@ -28,7 +28,7 @@
   ////////// convert yml hash to javascript key value objects /////////
 
   var luigi_metadata = {}; //key, value object
-  {% for key in hash2 %}  
+  {% for key in hash %}  
   
   var key = "{{key | first}}"  //key
   var values = {} //values object
@@ -118,3 +118,4 @@
 
 </script>
 
+</html>

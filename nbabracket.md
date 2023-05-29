@@ -567,3 +567,108 @@ function tester() {
   });
 
 </script>
+
+<div id="sprite-container">
+  <div id="sprite-image">
+  </div>
+</div>
+
+<style> 
+#sprite-image {
+  height: 32px;
+  width: 32px;
+  background: url("/luigi_animation.png")
+    0px 0px;
+}
+</style>
+
+<script>
+var animationInterval;
+var spriteSheet = document.getElementById("sprite-image");
+var widthOfSpriteSheet = 2000;
+var widthOfEachSprite = 32;
+
+function stopAnimation() {
+  clearInterval(animationInterval);
+}
+
+function startAnimation() {
+  var position = widthOfEachSprite; //start position for the image
+  const speed = 100; //in millisecond(ms)
+  const diff = widthOfEachSprite; //difference between two sprites
+
+  animationInterval = setInterval(() => {
+    spriteSheet.style.backgroundPosition = `-${position}px 0px`;
+
+    if (position < widthOfSpriteSheet) {
+      position = position + diff;
+    } else {
+      //increment the position by the width of each sprite each time
+      position = widthOfEachSprite;
+    }
+    //reset the position to show first sprite after the last one
+  }, speed);
+}
+
+//Start animation
+startAnimation();
+
+</script>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script> 
+</head>
+<body>
+
+<script>
+    var config = {
+        type: Phaser.AUTO,
+        width: 400,
+        height: 200,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 200 }
+            }
+        },
+        scene: {
+            preload: preload,
+            create: create
+        }
+    };
+
+    var game = new Phaser.Game(config);
+
+    function preload ()
+    {
+        this.load.image('sky', '/BasketballCourt.png');
+        this.load.image('logo', '/basketball-sprite.png');
+        this.load.image('red', '/Red_Color.jpg');
+    }
+
+    function create ()
+    {
+        sprite = this.add.image(400, 300, 'sky');
+        sprite.setScale(1)
+
+        var particles = this.add.particles('red');
+        particles.setScale(0.00001)
+
+        var emitter = particles.createEmitter({
+            speed: 100,
+            scale: { start: 1, end: 0 },
+            blendMode: 'ADD'
+        });
+
+        var logo = this.physics.add.image(400, 100, 'logo');
+        logo.setScale(0.05)
+        logo.setVelocity(100, 200);
+        logo.setBounce(1, 1);
+        logo.setCollideWorldBounds(true);
+
+        emitter.startFollow(logo);
+    }
+    </script>
+
+</body>
+</html>
