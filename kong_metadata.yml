@@ -1,0 +1,21 @@
+# Metadata to describe animations in sprite file images/mario_animatio2ns.png
+- Rest:
+  row: 0
+  col: 4
+  frames: 3
+- Walk:
+  row: 0
+  col: 10
+  frames: 2
+- Jump:
+  row: 4
+  col: 10
+  frames: 2
+- Crouching:
+  row: 1
+  col: 9 
+  frames: 1
+- WalkL:
+  row: 0
+  col: 0
+  frames: 2

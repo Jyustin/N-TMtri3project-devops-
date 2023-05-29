@@ -63,3 +63,8 @@
   row: 13
   col: 0
   frames: 15
+- Rest2:
+  row: 0
+  col: 1
+  frames: 16
+
