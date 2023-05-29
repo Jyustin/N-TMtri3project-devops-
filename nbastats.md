@@ -37,7 +37,7 @@
 </script>
 
 
-  <table id="NBAStats">
+  <table id="sportsTable">
     <thead>
       <tr>
         <th onclick="sortTable('assists per game')">Assists Per Game</th>
@@ -61,27 +61,21 @@
     </thead>
   </table>
   
- <script>
-    // sortTable function meant to sort based on each column header.
+  <script>
+    // Function to sort the table based on the selected column
 function sortTable(columnName) {
-  const table = document.getElementById('NBAStats');
-  // constant calls the tableID that was previously defined
+  const table = document.getElementById('sportsTable');
   const rows = Array.from(table.tBodies[0].getElementsByTagName('tr'));
   const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
   const isAscending = !headerRow.classList.contains('asc');
-  // this is a very important line - the asc class helps the function decide whether or not the column is going to be sorted in increasing order or decreasing order.
   
   rows.sort((rowA, rowB) => {
     let cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
     let cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
-    // the nth-child selector is different from normal JS arrays, these have an index starting at 1 rather than 0
-    // the rows are sorted based on the column. getColumnIndex is used to get the index of the column. 
 
     if (columnName.toLowerCase() === 'name' || columnName.toLowerCase() === 'team') {
       return isAscending ? cellA.localeCompare(cellB, undefined, { sensitivity: 'base' }) : cellB.localeCompare(cellA, undefined, { sensitivity: 'base' });
     }
-    
-    // these were for special situations. the name and team columns were not sorting properly, so the localeCompare was used to sort the rows alphabetically. 
 
     // Convert the cell values to numbers for the "Games Played" column
     if (columnName.toLowerCase() === 'games played') {
@@ -89,29 +83,24 @@ function sortTable(columnName) {
       cellB = parseInt(cellB);
     }
     
-    // games played was not sorting for some odd reason, which is why this if statement was added.
-    // purpose is to parse the values as an integer and then sort numerically. 
-    
     return isAscending ? cellA - cellB : cellB - cellA;
   });
   
   rows.forEach(row => table.tBodies[0].appendChild(row));
   headerRow.classList.toggle('asc');
-  // this is meant for after sorting. after the sorting is done, the appendChild is meant to append these cell values back into the specified table.
 }
 
-    
+
+  
+    // Helper function to get the index of the selected column
     function getColumnIndex(columnName) {
-      // each column name is taken in columnName to get its index.
-      const table = document.getElementById('NBAStats');
+      const table = document.getElementById('sportsTable');
       const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
-      // contains the column headers, index 0
       const headers = Array.from(headerRow.getElementsByTagName('th'));
+      
       return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
-      // converts column header names to lowercase to account for sortTable definitions
     }
   </script>
-
 
 <script>
 
