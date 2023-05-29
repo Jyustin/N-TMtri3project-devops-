@@ -37,7 +37,7 @@
 </script>
 
 
-  <table id="musicTable">
+  <table id="sportsTable">
     <thead>
       <tr>
         <th onclick="sortTable('assists per game')">Assists Per Game</th>
@@ -64,7 +64,7 @@
   <script>
     // Function to sort the table based on the selected column
 function sortTable(columnName) {
-  const table = document.getElementById('musicTable');
+  const table = document.getElementById('sportsTable');
   const rows = Array.from(table.tBodies[0].getElementsByTagName('tr'));
   const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
   const isAscending = !headerRow.classList.contains('asc');
@@ -94,7 +94,7 @@ function sortTable(columnName) {
   
     // Helper function to get the index of the selected column
     function getColumnIndex(columnName) {
-      const table = document.getElementById('musicTable');
+      const table = document.getElementById('sportsTable');
       const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
       const headers = Array.from(headerRow.getElementsByTagName('th'));
       
