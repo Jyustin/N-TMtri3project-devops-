@@ -58,43 +58,6 @@
             <th onclick="sortTable('weight (pounds)')">Weight (pounds)</th>
         </tr>
     </thead>
-    <tbody>
-        <!-- Table body rows with data -->
-        <tr>
-            <td>2</td>
-            <td>35</td>
-            <td>1</td>
-            <td>5</td>
-            <td>44</td>
-            <td>88</td>
-            <td>1421</td>
-            <td>81</td>
-            <td>LeBron James</td>
-            <td>6</td>
-            <td>28</td>
-            <td>1</td>
-            <td>Los Angeles Lakers</td>
-            <td>24</td>
-            <td>250</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>32</td>
-            <td>2</td>
-            <td>6</td>
-            <td>55</td>
-            <td>92</td>
-            <td>1231</td>
-            <td>75</td>
-            <td>Steph Curry</td>
-            <td>5</td>
-            <td>29</td>
-            <td>1</td>
-            <td>Golden State Warriors</td>
-            <td>34</td>
-            <td>185</td>
-        </tr>
-    </tbody>
 </table>
 
 <script>
