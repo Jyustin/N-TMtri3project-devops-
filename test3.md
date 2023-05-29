@@ -7,8 +7,8 @@
 <script>
     var config = {
         type: Phaser.AUTO,
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 800,
         physics: {
             default: 'arcade',
             arcade: {
@@ -33,7 +33,7 @@
     function create ()
     {
         sprite = this.add.image(400, 300, 'sky');
-        sprite.setScale(2)
+        sprite.setScale(.2)
 
         var particles = this.add.particles('red');
         particles.setScale(0.00001)
