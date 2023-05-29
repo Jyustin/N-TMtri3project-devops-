@@ -269,7 +269,7 @@ function tester() {
 </script>
 
 <!--- 2nd sprite file --->
-{% assign sprite_file2 = site.baseurl | append: "/" | append: "luigi_animation.png" %}  <!--- Liquid concatentation --->
+{% assign sprite_file2 = site.baseurl | append: "/" | append: "boo_animation.png" %}  <!--- Liquid concatentation --->
 {% assign hash2 = site.data.new_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels2 = 32 %} <!--- Liquid integer assignment --->
 
@@ -283,6 +283,8 @@ function tester() {
     width: {{pixels2}}px;
     background-image: url('{{sprite_file2}}');
     background-repeat: no-repeat;
+    margin-top: 120px; /* Adjust the value as needed */
+
   }
 
   /* background position of sprite element */

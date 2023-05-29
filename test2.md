@@ -1,4 +1,4 @@
-
+<html>
 <!--- 2nd sprite file --->
 {% assign sprite_file = site.baseurl | append: "/" | append: "snes_animation.png" %}  <!--- Liquid concatentation --->
 {% assign hash = site.data.kong_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
@@ -149,3 +149,5 @@
   });
 
 </script>
+
+</html>
