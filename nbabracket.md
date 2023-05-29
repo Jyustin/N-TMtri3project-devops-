@@ -577,7 +577,7 @@ function tester() {
 #sprite-image {
   height: 32px;
   width: 32px;
-  background: url("/luigi_animation.png")
+  background: url("/N-TMtri3project-devops-/luigi_animation.png")
     0px 0px;
 }
 </style>
