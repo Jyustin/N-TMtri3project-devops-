@@ -26,7 +26,7 @@
     function preload ()
     {
         this.load.image('sky', '/N-TMtri3project-devops-/BasketballCourt.png');
-        this.load.image('logo', '/N-TMtri3project-devops-/basketball-sprite.png');
+        this.load.image('logo', '/N-TMtri3project-devops-/basketball-sprite3.png');
         this.load.image('red', '/N-TMtri3project-devops-/Red_Color.jpg');
     }
 
