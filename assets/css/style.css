@@ -278,33 +278,21 @@ section #title .credits.right { float: right; }
   nav { display: none; } }
 
 
-/* Add animation keyframes */
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: translateX(0%);
+  
+  /* Apply animation to the image */
+  .spinning-image {
+    animation: spin 4s linear infinite;
   }
-}
-
-/* Apply animation to the image */
-#lebronpic {
-  animation: slideIn 1s ease-in-out forwards;
-}
-
-/* Set the initial position for the image */
-#lebronpic {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Add a wrapper for the animation */
-#animationWrapper {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
+  
+  /* Update the class for the image element */
+  section img.spinning-image {
+    max-width: 100%;
+  }
