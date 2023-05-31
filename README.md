@@ -31,7 +31,7 @@ The frameworks and languages used for the frontend include the following:
 
 **config.yml**: This file is crucial, as it sets many basic settings. It sets the primary Jekyll theme, the title of the site to be shown, the description beneath the title shown on the frontend, and the GitHub repository link if the user would want to reference to the code.
 
-*Files in Root Directory Pertaining to Specific Features*:
+**Files in Root Directory Pertaining to Specific Features**:
 
 *nbabracket.md*: The primary frontend code for the NBA Bracket Feature.
 
