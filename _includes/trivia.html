@@ -11,7 +11,7 @@
 
         function displayQuestion(category, value, element) {
             let URL = `https://tri3dev.duckdns.org/api/jeopardy?category=${category}&points=${value}`;
-            let checkURL = `https://tri3dev.duckdns.org/api/check_answer`;
+            let checkURL = `https://tri3dev.duckdns.org/api/check_answer?category=${category}&points=${value}`;
 
             fetch(URL)
                 .then(response => response.json())
