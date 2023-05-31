@@ -10,10 +10,10 @@
     redirect: 'follow'
   };
 
-  fetch("https://tri3dev.duckdns.org/api/nfl", requestOptions)
+  fetch("http://127.0.0.1:8086/api/nfl", requestOptions)
     .then(response => response.json())
     .then(data => {
-      const table = document.getElementById("sportsTable");
+      const table = document.getElementById("nflStats");
       const tbody = document.createElement("tbody");
 
       data.forEach(player => {
@@ -61,6 +61,9 @@
         rows.sort((rowA, rowB) => {
             let cellA = rowA.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
             let cellB = rowB.querySelector(`td:nth-child(${getColumnIndex(columnName)})`).innerText;
+            if (columnName.toLowerCase() === 'player name' || columnName.toLowerCase() === 'height' || columnName.toLowerCase() === 'position' || columnName.toLowerCase() === 'espn player link') {
+                return isAscending ? cellA.localeCompare(cellB, undefined, { sensitivity: 'base' }) : cellB.localeCompare(cellA, undefined, { sensitivity: 'base' });
+            }
             return isAscending ? cellA - cellB : cellB - cellA;
         });
 
@@ -82,7 +85,7 @@
 <script>
 
 const resultContainer = document.getElementById("result");
-const url = "https://tri3dev.duckdns.org/api/nfl"
+const url = "http://127.0.0.1:8086/api/nfl"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_players();
