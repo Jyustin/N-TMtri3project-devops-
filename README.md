@@ -9,9 +9,10 @@ Current Runtime Link: https://jyustin.github.io/N-TMtri3project-devops-/
  - Cloning the Repository for Modification & Using in VSCode
 
     ``` git
-    git clone https://github.com/Jyustin/N-TMtri3project-devops-.git
     cd ~
-    cd ./_vscode/N-TMtri3project-devops-.git
+    cd ./_vscode
+    git clone https://github.com/Jyustin/N-TMtri3project-devops-.git
+    cd ./N-TMtri3project-devops-.git
     code .
 **SportsGame: Frontend**:
 
