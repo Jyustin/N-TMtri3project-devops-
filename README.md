@@ -1,5 +1,9 @@
 Current Runtime Link: https://jyustin.github.io/N-TMtri3project-devops-/
 
+Backend runtime Link: https://tri3dev.duckdns.org/
+
+Backend repo Link: https://github.com/Jyustin/tri3NATMdevsBackend/
+
 - Running The Frontend Repository Locally. This is incredibly useful for testing purposes.
     
  
