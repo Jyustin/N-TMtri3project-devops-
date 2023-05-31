@@ -1,8 +1,6 @@
 <h1>Premier League Statistics</h1>
 <br>
 <p id="result" style="font-color:red;display:none;" ></p>
-<html>
-<body>
 
 <script>
 //https://tri3dev.duckdns.org/api/premierleagueplayer
@@ -130,7 +128,3 @@ fetch(read_fetch, requestOptions)
         // column header names are converted to lowercase. the sortTable is formatted like that as seen above - the IDs are all lowercase, but the formatted frontend headers are all uppercase, so they need to be converted to lowercase. makes process a whole lot easier and more efficient rather than having to deal with manually matching the ID names and column header names.
     }
 </script>
-
-
-</body>
-</html>
