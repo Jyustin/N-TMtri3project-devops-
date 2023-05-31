@@ -1,5 +1,8 @@
 <h1>NFL Statistics</h1>
 <br>
+<html>
+<body>
+  
 
 <script>
   var requestOptions = {
@@ -74,6 +77,63 @@
         return headers.findIndex(header => header.innerText.toLowerCase() === columnName.toLowerCase()) + 1;
     }
 </script>
+
+<script>
+
+const resultContainer = document.getElementById("result");
+const url = "https://tri3dev.duckdns.org/api/nfl"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+read_players();
+
+function read_players() {
+    const read_options = {
+      method: 'GET', 
+      mode: 'cors', 
+      cache: 'default', 
+      credentials: 'omit', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };     
+    fetch(read_fetch, read_options)
+      
+      .then(response => {
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            return;
+        }
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    })
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+  }
+
+</script>
+
+</body>
+</html>
+  
+
+
+
 
 
 
