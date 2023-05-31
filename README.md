@@ -6,7 +6,13 @@ Current Runtime Link: https://jyustin.github.io/N-TMtri3project-devops-/
     ```ruby
     bundle exec jekyll serve -H 0.0.0.0 -P 4001
     ```
+ - Cloning the Repository for Modification & Using in VSCode
 
+    ``` git
+    git clone https://github.com/Jyustin/N-TMtri3project-devops-.git
+    cd ~
+    cd ./_vscode/N-TMtri3project-devops-.git
+    code .
 **SportsGame: Frontend**:
 
 A frontend is necessary for this project, as it cannot simply be run through a console.
