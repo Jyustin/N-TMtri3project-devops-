@@ -169,5 +169,30 @@ function read_players() {
 
 </script>
 
+  <style>
+    @keyframes spin {
+      0% {
+        transform: translateX(0) rotate(0deg);
+      }
+      50% {
+        transform: translateX(200px) rotate(360deg);
+      }
+      100% {
+        transform: translateX(0) rotate(720deg);
+      }
+    }
+    
+    .spinning-image {
+      animation: spin 4s linear infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+    
+![LeBron James](lebronpic.jpg)
+
+
 </body>
 </html>
