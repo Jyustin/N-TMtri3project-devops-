@@ -32,7 +32,7 @@
     <th>game 3<br>date</th>
 <tr>
     <td>
-    <select name="teams1" id="selection 1"> 
+    <select name="teams1" id="selection 1">  <!--- Create the team dropdown menus. --->
         <option value="team 1">team 1</option> 
         <option value="team 2">team 2</option> 
         <option value="team 3">team 3</option> 
@@ -77,19 +77,6 @@
         <option value="team 4">team 4</option> 
     </select></td>
 
-
-
-<script>
-function tester() {
-    alert("hi");
-    test1 = "cool"
-    var selection2 = document.getElementById("selection2").getElementsByTagName("select")[0].value;
-
-    document.getElementById("selection 2").innerHTML = selection2;
-    alert(test1);
-
-}
-</script>
 
 <p id="mario" class="sprite"></p>
 <p id="mario2" class="sprite3"></p>
@@ -268,7 +255,6 @@ function tester() {
 
 </script>
 
-<!--- 2nd sprite file --->
 {% assign sprite_file2 = site.baseurl | append: "/" | append: "boo_animation.png" %}  <!--- Liquid concatentation --->
 {% assign hash2 = site.data.new_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels2 = 32 %} <!--- Liquid integer assignment --->
@@ -399,6 +385,8 @@ function tester() {
 </script>
 
 
+
+<!--- 2nd sprite file (2nd Mario created. ALL CODE BELOW IS FOR 2ND Mario, Not 1st) --->
 
 <style>
   /* CSS style rules for the elements id and class above...
@@ -567,6 +555,8 @@ function tester() {
   });
 
 </script>
+
+<!--- 2ND MARIO CODE ENDS HERE! --->
 
 <div id="sprite-container">
   <div id="sprite-image">
