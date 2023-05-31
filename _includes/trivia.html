@@ -1,68 +1,40 @@
 <html>
-<head>
+  <head>
     <script>
-        let score = 0;
-
-        function createScore() {
-            let scoreElement = document.createElement("h1");
-            scoreElement.innerText = score;
-            document.getElementById("score").appendChild(scoreElement);
-        }
-
-        function displayQuestion(category, value, element) {
-            let URL = `https://tri3dev.duckdns.org/api/jeopardy?category=${category}&points=${value}`;
-            let checkURL = `https://tri3dev.duckdns.org/api/check_answer?category=${category}&points=${value}`;
-
-            fetch(URL)
-                .then(response => response.json())
-                .then(problem => {
-                    let { question } = problem;
-                    let userResponse = prompt(question);
-
-                    const letterNumber = /^[A-Za-z0-9\s]*$/;
-
-                    if (!letterNumber.test(userResponse)) {
-                        alert("Only letters and numbers are allowed.");
-                        return;
-                    }
-
-                    fetch(checkURL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            "category": category,
-                            "points": value,
-                            "answer": userResponse.trim()
-                        })
-                    })
-                        .then(response => response.json())
-                        .then(result => {
-                            if (result.result === "Correct") {
-                                score += parseInt(value);
-                                element.parentNode.removeChild(element);
-                                updateScore();
-                                alert("Correct answer!");
-                            } else {
-                                alert("Incorrect answer!");
-                            }
-                        });
-                });
-        }
-
-        function updateScore() {
-            document.getElementById("score").innerText = score;
-        }
-
-        window.onload = function () {
-            createScore();
-        };
+      let score = 0;
+      function displayQuestion(category, value, element) {
+        let URL = `${location.origin}/api/jeopardy?category=${category}&points=${value}`;
+        let check_URL = `${location.origin}/api/check_answer?category=${category}&points=${value}`;
+        fetch(URL).then(d => d.json()).then(problem => {
+          let { question } = problem;
+          let userResponse = prompt(question);
+          fetch(check_URL,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ "answer": userResponse }),
+        }).then(d => d.json()).then(response => {
+            console.log(response)
+            if(response.result === "Correct") {
+                score += value;
+                element.remove();
+              } else {
+                alert("you are wrong");
+              }
+              document.getElementById("score").innerText=score;
+          });
+          
+          
+         // document.getElementById("question").innerHTML = question;
+        });
+}
+      
     </script>
-</head>
+  </head>
   <body>
     <h2>Jeopardy Categories</h2>
-    <div id="score"></div>
+    <h1 id="score">0</h1>
     <table>
       <tr>
         <td>NBA</td>
