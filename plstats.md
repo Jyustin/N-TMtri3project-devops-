@@ -49,7 +49,7 @@ fetch(read_fetch, requestOptions)
         mainImage.style.width = "200px";
         mainImage.style.height = "200px";
         mainImage.alt = "Premier League";
-        mainImage.class = "";
+        mainImage.classList.remove("spinning-image");
     } catch (e){
         console.log(e);
     }
