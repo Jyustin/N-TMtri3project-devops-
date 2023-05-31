@@ -26,7 +26,7 @@
     function preload ()
     {
         this.load.image('sky', '/BasketballCourt.png');
-        this.load.image('logo', '/basketball-sprite.png');
+        this.load.image('logo', '/basketball-sprite3.png');
         this.load.image('red', '/Red_Color.jpg');
     }
 
