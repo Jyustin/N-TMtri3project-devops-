@@ -38,3 +38,6 @@ The frameworks and languages used for the frontend include the following:
 *nbastats.md*: The primary frontend code for the NBA Statistics Feature.
 
 *nflstats.md*: The primary frontend code for the NFL Statistics Feature.
+
+
+**There are many PNG and test markdown files hovering in the repository. These are solely for the purpose of the sprite animation's functionality and the basketball screensaver feature, and should not be touched unless the animation or screensaver is to be removed or modified.**
