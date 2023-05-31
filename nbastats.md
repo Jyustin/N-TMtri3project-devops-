@@ -25,11 +25,11 @@
       transform: translate(-50%, -50%);
     }
   </style>
-</head>
 <body>
   <section>
     <img class="spinning-image" src="lebronpic.jpg" alt="LeBron James">
   </section>
+</body>
 
 <script>
   var requestOptions = {
