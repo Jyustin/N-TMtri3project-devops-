@@ -18,7 +18,7 @@
  <script>
     
     function sortTable(columnName) {
-        const table = document.getElementById('sportsTable');
+        const table = document.getElementById('nflStats');
         const rows = Array.from(table.tBodies[0].getElementsByTagName('tr'));
         const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
         const isAscending = !headerRow.classList.contains('asc');
@@ -36,7 +36,7 @@
 
     
     function getColumnIndex(columnName) {
-        const table = document.getElementById('sportsTable');
+        const table = document.getElementById('nflStats');
         const headerRow = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0];
         const headers = Array.from(headerRow.getElementsByTagName('th'));
 
