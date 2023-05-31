@@ -36,8 +36,8 @@
 
 
 <table id="nflStats">
-    <thead>
-        <tr>
+  <thead>
+      <tr>
           <th onclick="sortTable('player name')">Player Name</th>
           <th onclick="sortTable('player id')">Player ID</th>
           <th onclick="sortTable('team id')">Team ID</th>
@@ -46,8 +46,9 @@
           <th onclick="sortTable('jersey number')">Jersey Number</th>
           <th onclick="sortTable('height')">Height</th>
           <th onclick="sortTable('espn player link')">ESPN Player Link</th>
-    </thead>
- </table>
+      </tr>
+  </thead>
+</table>
  
  <script>
     
