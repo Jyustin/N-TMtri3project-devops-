@@ -1,6 +1,7 @@
 <html>
 <table summary="Tournament Bracket" class="bracket">
-<style>
+<!--- code below is used to stylize the bracket, make the bracket look like a bracket --->
+<style> 
    table.bracket {
     border-collapse: collapse;
     border: none;
@@ -78,7 +79,7 @@
     </select></td>
 
 
-<p id="mario" class="sprite"></p>
+<p id="mario" class="sprite"></p> <!--- create the marios --->
 <p id="mario2" class="sprite3"></p>
 
 {% assign sprite_file = site.baseurl | append: "/" | append: "mario_animation.png" %}  <!--- Liquid concatentation --->
@@ -255,6 +256,7 @@
 
 </script>
 
+<!--- IMPORTANT: code below is for a boo animation that is broken and doesn't work. The sprite sheet isn't scrolled through. Don't worry abt it --->
 {% assign sprite_file2 = site.baseurl | append: "/" | append: "boo_animation.png" %}  <!--- Liquid concatentation --->
 {% assign hash2 = site.data.new_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels2 = 32 %} <!--- Liquid integer assignment --->
@@ -383,6 +385,7 @@
   });
 
 </script>
+<!--- IMPORTANT: END OF BOO CODE --->
 
 
 
@@ -563,6 +566,7 @@
   </div>
 </div>
 
+<!--- IMPORTANT: this code is for the luigi animation, since Mort's sprite code was weird --->
 <style> 
 #sprite-image {
   height: 32px;
@@ -604,6 +608,10 @@ function startAnimation() {
 startAnimation();
 
 </script>
+<!--- end of luigi code --->
+
+
+<!--- this is for baskeball screensaver which should be offscreen. if you want more detailed documentation  to look at go to basketballScreensaver.md --->
 <html>
 <head>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script> 

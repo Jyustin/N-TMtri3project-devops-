@@ -7,8 +7,8 @@
 <script>
     var config = {
         type: Phaser.AUTO,
-        width: 1500,
-        height: 300,
+        width: 1800,
+        height: 400,
         physics: {
             default: 'arcade',
             arcade: {
@@ -36,10 +36,10 @@
         sprite.setScale(2)
 
         var particles = this.add.particles('red');
-        particles.setScale(0.00001)
+        particles.setScale(.1)
 
         var emitter = particles.createEmitter({
-            speed: 100,
+            speed: 500,
             scale: { start: 1, end: 0 },
             blendMode: 'ADD'
         });
