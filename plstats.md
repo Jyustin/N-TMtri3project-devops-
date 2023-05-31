@@ -44,7 +44,7 @@ fetch(read_fetch, requestOptions)
     });
     try{
         //let mainImage = document.getElementById("lebronpic");
-        let mainImage = document.getElementByTag("img");
+        let mainImage = document.getElementByTagName("img");
         mainImage.src="barclays-premier-league-logo.jpg";
         mainImage.style.width = "200px";
         mainImage.style.height = "200px";
