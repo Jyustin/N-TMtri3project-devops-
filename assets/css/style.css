@@ -297,3 +297,15 @@ section #title .credits.right { float: right; }
   section img.spinning-image {
     max-width: 100%;
   }
+
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+  
+  /* Update the class for the image element */
+  section img.spinning-image {
+    max-width: 100%;
+  }
