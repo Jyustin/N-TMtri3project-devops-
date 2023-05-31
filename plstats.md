@@ -1,16 +1,22 @@
-<h1>NBA Statistics for the NBA 75 Team</h1>
+<h1>Premier League Statistics</h1>
 <br>
-
-<html>
-<body>
+<p id="result" style="font-color:red;display:none;" ></p>
 
 <script>
-  var requestOptions = {
+const resultContainer = document.getElementById("result");
+
+// prepare URL's to allow easy switch from deployment and localhost
+//const url = "http://localhost:8086/api/premierleagueplayer"
+const url = https://tri3dev.duckdns.org/api/premierleagueplayer
+
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+
+const requestOptions = {
     method: 'GET',
     redirect: 'follow'
-  };
-
-  fetch("https://tri3dev.duckdns.org/api/nbastats", requestOptions)
+};
+fetch(read_fetch, requestOptions)
     .then(response => response.json())
     .then(data => {
       const table = document.getElementById("sportsTable");
@@ -31,9 +37,23 @@
 
       table.appendChild(tbody);
     })
-    .catch(error => console.log('error', error));
+    .catch(error => {
+        console.log('error', error);
+        resultContainer.innerHTML = error;
+        resultContainer.style.display="block";
 
-  // Rest of the code...
+    });
+    try{
+        //let mainImage = document.getElementById("lebronpic");
+        let mainImage = document.getElementsByTagName("img")[0];
+        mainImage.src="barclays-premier-league-logo.jpg";
+        mainImage.style.width = "200px";
+        mainImage.style.height = "200px";
+        mainImage.alt = "Premier League";
+        mainImage.classList.remove("spinning-image");
+    } catch (e){
+        console.log(e);
+    }
 </script>
 
   <!-- defines the tableID that is going to be referred to later in this segment -->
@@ -41,21 +61,20 @@
     <thead>
         <tr>
             <!-- these are the sortTable functions for each of the columns. the onclick triggers a sorting response on selecting the column header. -->
-            <th onclick="sortTable('name')">Name</th>
-            <th onclick="sortTable('team')">Team</th>
-            <th onclick="sortTable('height (inches)')">Height (inches)</th>
-            <th onclick="sortTable('weight (pounds)')">Weight (pounds)</th>
-            <th onclick="sortTable('games played')">Games Played</th>
-            <th onclick="sortTable('minutes per game')">Minutes Per Game</th>
-            <th onclick="sortTable('points per game')">Points Per Game</th>
-            <th onclick="sortTable('fg percent')">FG Percent</th>
-            <th onclick="sortTable('three percent')">Three Percent</th>
-            <th onclick="sortTable('ft percent')">FT Percent</th>
-            <th onclick="sortTable('offensive rebounds')">Offensive Rebounds</th>
-            <th onclick="sortTable('defensive rebounds')">Defensive Rebounds</th>
-            <th onclick="sortTable('assists per game')">Assists Per Game</th>
-            <th onclick="sortTable('steals per game')">Steals Per Game</th>
-            <th onclick="sortTable('blocks per game')">Blocks Per Game</th>
+            <th onclick="sortTable('Player Name')">Player Name</th>
+            <th onclick="sortTable('Team')">Team</th>
+            <th onclick="sortTable('Position')">Position</th>
+            <th onclick="sortTable('Jersey Number')">Jersey Number</th>
+            <th onclick="sortTable('Age')">Age</th>
+            <th onclick="sortTable('Height')">Height</th>
+            <th onclick="sortTable('Weight')">Weight</th>
+            <th onclick="sortTable('Goals')">Goals</th>
+            <th onclick="sortTable('Assits')">Assists</th>
+            <th onclick="sortTable('Yellow Cards')">Yellow Cards</th>
+            <th onclick="sortTable('Red Cards')">Red Cards</th>
+            <th onclick="sortTable('Passes Completed')">Passes Completed</th>
+            <th onclick="sortTable('Tackles')">Tackles</th>
+            <th onclick="sortTable('Clean Sheets')">Clean Sheets</th>
         </tr>
     </thead>
   </table>
@@ -112,62 +131,3 @@
         // column header names are converted to lowercase. the sortTable is formatted like that as seen above - the IDs are all lowercase, but the formatted frontend headers are all uppercase, so they need to be converted to lowercase. makes process a whole lot easier and more efficient rather than having to deal with manually matching the ID names and column header names.
     }
 </script>
-
-
-<script>
-
-const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-const url = "https://tri3dev.duckdns.org/api/nbastats"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
-read_players();
-
-function read_players() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };     // fetch the data from API
-    fetch(read_fetch, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
-    })
-      // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-
-</script>
-
-</body>
-</html>

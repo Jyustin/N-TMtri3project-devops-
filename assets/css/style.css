@@ -56,7 +56,7 @@ blockquote { margin: 1em 40px; }
 dfn { font-style: italic; }
 
 /* Addresses styling not present in IE6/7/8/9 */
-mark { background: #ff0; color: #000; }
+mark { background: rgb(0, 0, 0); color: #9a7272; }
 
 /* Addresses margins set differently in IE6/7 */
 p, pre { margin: 1em 0; }
@@ -206,11 +206,12 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 .highlight .ss { color: #90a959; }
 
-body { padding: 0px 0 20px 0px; margin: 0px; font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #f0e7d5; font-weight: normal; background: #252525; background-attachment: fixed !important; background: linear-gradient(#2a2a29, #1c1c1c); }
+body { padding: 0px 0 20px 0px; margin: 0px; font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #f0e7d5; font-weight: normal; background: #a79797; background-attachment: fixed !important; background: linear-gradient(#a79797, #a79797); }
 
 h1, h2, h3, h4, h5, h6 { color: #e8e8e8; margin: 0 0 10px; font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: normal; }
 
 p, ul, ol, table, pre, dl { margin: 0 0 20px; }
+
 
 h1, h2, h3 { line-height: 1.1; }
 
@@ -222,8 +223,8 @@ h4, h5, h6 { color: #e8e8e8; }
 
 h3 { font-size: 18px; line-height: 24px; font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-weight: normal; color: #b6b6b6; }
 
-a { color: #ffcc00; font-weight: 400; text-decoration: none; }
-a:hover { color: #ffeb9b; }
+a { color: #000000; font-weight: 400; text-decoration: none; }
+a:hover { color: #000000; }
 
 a small { font-size: 11px; color: #666; margin-top: -0.6em; display: block; }
 
@@ -235,11 +236,11 @@ strong { font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-s
 
 section img { max-width: 100%; }
 
-blockquote { border-left: 3px solid #ffcc00; margin: 0; padding: 0 0 0 20px; font-style: italic; }
+blockquote { border-left: 3px solid #010101; margin: 0; padding: 0 0 0 20px; font-style: italic; }
 
 code { font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace; color: #efefef; font-size: 13px; margin: 0 4px; padding: 4px 6px; border-radius: 2px; }
 
-pre { padding: 8px 15px; background: #191919; border-radius: 2px; border: 1px solid #121212; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); overflow: auto; overflow-y: hidden; }
+pre { padding: 8px 15px; background: #a79797; border-radius: 2px; border: 1px solid #121212; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); overflow: auto; overflow-y: hidden; }
 pre code { color: #efefef; text-shadow: 0px 1px 0px #000; margin: 0; padding: 0; }
 
 table { width: 100%; border-collapse: collapse; }
@@ -276,3 +277,24 @@ section #title .credits.right { float: right; }
 @media print, screen and (max-width: 480px) { #header { margin-top: -20px; }
   section { margin-top: 40px; }
   nav { display: none; } }
+
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Apply animation to the image */
+  .spinning-image {
+    animation: spin 4s linear infinite;
+  }
+  
+  /* Update the class for the image element */
+  section img.spinning-image {
+    max-width: 100%;
+  }
+

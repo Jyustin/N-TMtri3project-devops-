@@ -1,0 +1,106 @@
+<html>
+<head>
+    <script>
+        let score = 0;
+
+        function createScore() {
+            let scoreElement = document.createElement("h1");
+            scoreElement.innerText = score;
+            document.getElementById("score").appendChild(scoreElement);
+        }
+
+        function displayQuestion(category, value, element) {
+            let URL = `/api/jeopardy?category=${category}&points=${value}`;
+            let checkURL = `/api/check_answer`;
+
+            fetch(URL)
+                .then(response => response.json())
+                .then(problem => {
+                    let { question } = problem;
+                    let userResponse = prompt(question);
+
+                    const letterNumber = /^[A-Za-z0-9\s]*$/;
+
+                    if (!letterNumber.test(userResponse)) {
+                        alert("Only letters and numbers are allowed.");
+                        return;
+                    }
+
+                    fetch(checkURL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            "category": category,
+                            "points": value,
+                            "answer": userResponse.trim()
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(result => {
+                            if (result.result === "Correct") {
+                                score += parseInt(value);
+                                element.parentNode.removeChild(element);
+                                updateScore();
+                                alert("Correct answer!");
+                            } else {
+                                alert("Incorrect answer!");
+                            }
+                        });
+                });
+        }
+
+        function updateScore() {
+            document.getElementById("score").innerText = score;
+        }
+
+        window.onload = function () {
+            createScore();
+        };
+    </script>
+</head>
+  <body>
+    <h2>Jeopardy Categories</h2>
+    <div id="score"></div>
+    <table>
+      <tr>
+        <td>NBA</td>
+        <td><button onclick="displayQuestion('NBA', 100, this)">100</button></td>
+        <td><button onclick="displayQuestion('NBA', 200, this)">200</button></td>
+        <td><button onclick="displayQuestion('NBA', 300, this)">300</button></td>
+        <td><button onclick="displayQuestion('NBA', 400, this)">400</button></td>
+        <td><button onclick="displayQuestion('NBA', 500, this)">500</button></td>
+      </tr>
+      <tr>
+        <td>NFL</td>
+        <td><button onclick="displayQuestion('NFL', 100, this)">100</button></td>
+        <td><button onclick="displayQuestion('NFL', 200, this)">200</button></td>
+        <td><button onclick="displayQuestion('NFL', 300, this)">300</button></td>
+        <td><button onclick="displayQuestion('NFL', 400, this)">400</button></td>
+        <td><button onclick="displayQuestion('NFL', 500, this)">500</button></td>
+      </tr>
+      <tr>
+        <td>UFC</td>
+        <td><button onclick="displayQuestion('UFC', 100, this)">100</button></td>
+        <td><button onclick="displayQuestion('UFC', 200, this)">200</button></td>
+        <td><button onclick="displayQuestion('UFC', 300, this)">300</button></td>
+        <td><button onclick="displayQuestion('UFC', 400, this)">400</button></td>
+        <td><button onclick="displayQuestion('UFC', 500, this)">500</button></td>
+      </tr>
+      <tr>
+        <td>Soccer</td>
+        <td><button onclick="displayQuestion('Soccer', 100, this)">100</button></td>
+        <td><button onclick="displayQuestion('Soccer', 200, this)">200</button></td>
+        <td><button onclick="displayQuestion('Soccer', 300, this)">300</button></td>
+        <td><button onclick="displayQuestion('Soccer', 400, this)">400</button></td>
+        <td><button onclick="displayQuestion('Soccer', 500, this)">500</button></td>
+      </tr>
+      <tr>
+        <td>MLB</td>
+        <td><button onclick="displayQuestion('MLB', 100, this)">100</button></td>
+        <td><button onclick="displayQuestion('MLB', 200, this)">200</button></td>
+        <td><button onclick="displayQuestion('MLB', 300, this)">300</button></td>
+        <td><button onclick="displayQuestion('MLB', 400, this)">400</button></td>
+        <td><button onclick="displayQuestion('MLB', 500, this)">500</button></td>
+    </tr>
