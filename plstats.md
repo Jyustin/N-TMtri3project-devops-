@@ -7,6 +7,11 @@
 <script>
 //https://tri3dev.duckdns.org/api/premierleagueplayer
 const resultContainer = document.getElementById("result");
+let mainImage = document.getElementById("lebron-image");
+mainImage.src="barclays-premier-league-logo.jpg";
+mainImage.style.width = "200px";
+mainImage.style.height = "200px";
+mainImage.alt = "Premier League";
 // prepare URL's to allow easy switch from deployment and localhost
 const url = "http://localhost:8086/api/premierleagueplayer"
 const create_fetch = url + '/create';
