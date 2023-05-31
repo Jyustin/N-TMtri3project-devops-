@@ -44,11 +44,12 @@ fetch(read_fetch, requestOptions)
     });
     try{
         //let mainImage = document.getElementById("lebronpic");
-        let mainImage = document.getElementByTagName("img");
+        let mainImage = document.getElementsByTagName("img")[0];
         mainImage.src="barclays-premier-league-logo.jpg";
         mainImage.style.width = "200px";
         mainImage.style.height = "200px";
         mainImage.alt = "Premier League";
+        mainImage.classList.remove("spinning-image");
     } catch (e){
         console.log(e);
     }
