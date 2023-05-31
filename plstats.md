@@ -10,7 +10,7 @@
     redirect: 'follow'
   };
 //https://tri3dev.duckdns.org/api/nbastats
-  fetch("http://172.27.30.9:8086/api/premierleagueplayer/", requestOptions)
+  fetch("http://localhost:8086/api/premierleagueplayer/", requestOptions)
     .then(response => response.json())
     .then(data => {
       const table = document.getElementById("sportsTable");
@@ -115,11 +115,11 @@
 
 <script>
 
-//http://172.27.30.9:8086/api/premierleagueplayer
+//http://localhost:8086/api/premierleagueplayer
 //https://tri3dev.duckdns.org/api/nbastats
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://172.27.30.9:8086/api/premierleagueplayer"
+const url = "http://localhost:8086/api/premierleagueplayer"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 //read_players();
