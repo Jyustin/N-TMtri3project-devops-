@@ -1,6 +1,37 @@
 <h1>NFL Statistics</h1>
 <br>
 
+<script>
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  fetch("https://tri3dev.duckdns.org/api/nfl", requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      const table = document.getElementById("sportsTable");
+      const tbody = document.createElement("tbody");
+
+      data.forEach(player => {
+        const row = document.createElement("tr");
+
+        for (const key in player) {
+          const cell = document.createElement("td");
+          cell.innerText = player[key];
+          row.appendChild(cell);
+        }
+
+        tbody.appendChild(row);
+      });
+
+      table.appendChild(tbody);
+    })
+    .catch(error => console.log('error', error));
+
+</script>
+
+
 <table id="nflStats">
     <thead>
         <tr>
