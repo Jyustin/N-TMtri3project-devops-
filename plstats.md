@@ -3,11 +3,12 @@
 <p id="result" style="font-color:red;display:none;" ></p>
 
 <script>
-//https://tri3dev.duckdns.org/api/premierleagueplayer
 const resultContainer = document.getElementById("result");
 
 // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://localhost:8086/api/premierleagueplayer"
+//const url = "http://localhost:8086/api/premierleagueplayer"
+const url = https://tri3dev.duckdns.org/api/premierleagueplayer
+
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
