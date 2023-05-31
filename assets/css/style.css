@@ -279,22 +279,4 @@ section #title .credits.right { float: right; }
   nav { display: none; } }
 
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Apply animation to the image */
-  .spinning-image {
-    animation: spin 4s linear infinite;
-  }
-  
-  /* Update the class for the image element */
-  section img.spinning-image {
-    max-width: 100%;
-  }
-
+ 
