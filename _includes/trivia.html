@@ -10,8 +10,8 @@
         }
 
         function displayQuestion(category, value, element) {
-            let URL = `/api/jeopardy?category=${category}&points=${value}`;
-            let checkURL = `/api/check_answer`;
+            let URL = `tri3dev.duckdns.org/api/jeopardy?category=${category}&points=${value}`;
+            let checkURL = `tri3dev.duckdns.org/api/check_answer`;
 
             fetch(URL)
                 .then(response => response.json())
