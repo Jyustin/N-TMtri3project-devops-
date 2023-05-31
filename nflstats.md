@@ -10,7 +10,7 @@
     redirect: 'follow'
   };
 
-  fetch("http://127.0.0.1:8086/api/nfl", requestOptions)
+  fetch("https://tri3dev.duckdns.org/api/nfl", requestOptions)
     .then(response => response.json())
     .then(data => {
       const table = document.getElementById("nflStats");
@@ -85,7 +85,7 @@
 <script>
 
 const resultContainer = document.getElementById("result");
-const url = "http://127.0.0.1:8086/api/nfl"
+const url = "https://tri3dev.duckdns.org/api/nfl"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_players();
